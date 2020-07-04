@@ -1,7 +1,8 @@
-/app/node_modules
-/app/dist
-/app/idea.sublime
-/app/yarn.lock
-/app/docs/_build
-/app/docs/_static
-/app/docs/_templates
+/node_modules
+/dist
+/idea.sublime
+/yarn.lock
+/docs/_build
+/docs/_static
+/docs/_templates
+/app
