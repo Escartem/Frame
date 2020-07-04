@@ -2,4 +2,6 @@
 /app/dist
 /app/idea.sublime
 /app/yarn.lock
-/app/docs
+/app/docs/_build
+/app/docs/_static
+/app/docs/_templates
