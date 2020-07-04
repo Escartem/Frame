@@ -1,11 +1,25 @@
 const {app, BrowserWindow, electron, ipcMain} = require('electron')
+const { dialog } = require('electron')
 const path = require('path')
 
-const { dialog } = require('electron')
+const squirrelUrl = "https://github.com/Escartem/Frame/releases/latest/download/";
 
-const options = {
-	message: 'Mise à jour disponible !',
-	buttons: ['Ok']
+const startAutoUpdater = (squirrelUrl) => {
+  // The Squirrel application will watch the provided URL
+  electron.autoUpdater.setFeedURL(`${squirrelUrl}/win64/`);
+
+  // Display a success message on successful update
+  electron.autoUpdater.addListener("update-downloaded", (event, releaseNotes, releaseName) => {
+    electron.dialog.showMessageBox({"message": `The release ${releaseName} has been downloaded`});
+  });
+
+  // Display an error message on update error
+  electron.autoUpdater.addListener("error", (error) => {
+    electron.dialog.showMessageBox({"message": "Auto updater error: " + error});
+  });
+
+  // tell squirrel to check for updates
+  electron.autoUpdater.checkForUpdates();
 }
 
 //const response = dialog.showMessageBox(null);
@@ -16,6 +30,29 @@ const options = {
 	//repo: 'escartem/Frame'
 //})
 
+const handleSquirrelEvent = () => {
+  if (process.argv.length === 1) {
+    return false;
+  }
+
+  const squirrelEvent = process.argv[1];
+  switch (squirrelEvent) {
+    case '--squirrel-install':
+    case '--squirrel-updated':
+    case '--squirrel-uninstall':
+      setTimeout(app.quit, 1000);
+      return true;
+
+    case '--squirrel-obsolete':
+      app.quit();
+      return true;
+  }
+}
+
+if (handleSquirrelEvent()) {
+  // squirrel event handled and app will exit in 1000ms, so don't do anything else
+  return;
+}
 
 let win
 let loadingScreen;
@@ -34,7 +71,6 @@ const createLoadingScreen = () => {
   loadingScreen.webContents.on('did-finish-load', () => {
     loadingScreen.show();
   });
-  dialog.showMessageBox(null);
   setTimeout(() => {
     createWindow();
   }, 2000);
@@ -83,6 +119,7 @@ function createWindow () {
 }
 
 app.on('ready', () => {
+  //if (process.env.NODE_ENV !== "dev") startAutoUpdater(squirrelUrl)
   createLoadingScreen();
 })
 
