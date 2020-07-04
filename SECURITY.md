@@ -13,7 +13,7 @@ Here are the following versions that are supported with security updates.
 
 ## Reporting a Vulnerability
 
-To report a vulnerability, create an issue containing :
+To report a vulnerability, create a blank issue containing :
 - The concerned vulnerability
 - What changes required
 
