@@ -1,0 +1,31 @@
+{
+  "name": "frame",
+  "version": "1.1.2",
+  "description": "frameless app",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "package": "./node_modules/.bin/electron-packager . frame --platform=win32 --arch=x64 --out=dist",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
+  },
+  "postinstall": "electron-builder install-app-deps",
+  "build": {
+    "appId": "frame",
+    "win": {
+      "target": "NSIS",
+      "icon": "icon.ico"
+    }
+  },
+  "author": "Escartem",
+  "license": "ISC",
+  "dependencies": {
+    "update-electron-app": "^1.5.0"
+  },
+  "devDependencies": {
+    "electron": "^7.1.7",
+    "electron-builder": "^22.3.2",
+    "electron-packager": "^14.2.1",
+    "update-electron-app": "^1.5.0"
+  }
+}
