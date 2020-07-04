@@ -8,9 +8,6 @@ Basic functions
 
 When frame is launched here are the basics functions of the app :
 
-.. contents:: List:
-	:local:
-
 ----
 
 ****************
