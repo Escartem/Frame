@@ -28,9 +28,9 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       # Install, build and test the project
-      - name: npm install, build and test
+      - name: ci
         run: |
-          npm install
+          npm ci
       - name: build
         run: |
           npm run dist
@@ -46,8 +46,3 @@ jobs:
         with:
           name: dist
           path: dist
-      - name: Archive code coverage results
-        uses: actions/upload-artifact@v1
-        with:
-          name: code-coverage-report
-          path: output/test/code-coverage.html
