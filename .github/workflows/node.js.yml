@@ -31,3 +31,5 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
     - run: npm test
+      env:
+        CI: true 
