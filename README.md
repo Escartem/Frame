@@ -1,4 +1,5 @@
 [![Documentation Status](https://readthedocs.org/projects/frame/badge/?version=latest)](https://frame.readthedocs.io/en/latest/?badge=latest)
+![Node.js CI](https://github.com/Escartem/Frame/workflows/Node.js%20CI/badge.svg)
 
 ## Frame
  Frameless Blank App
