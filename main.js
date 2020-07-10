@@ -57,16 +57,27 @@ if (handleSquirrelEvent()) {
 let win
 let loadingScreen;
 
+const local = app.getLocale()
+
 const createLoadingScreen = () => {
   loadingScreen = new BrowserWindow(Object.assign({
-    width: 240,
+    width: 185,
     height: 80,
     frame: false,
     resizable: false,
     alwaysOnTop: true,
     transparent: true
   }));
-  loadingScreen.loadFile('loading.html');
+
+  console.log(app.getLocale())
+  if (app.getLocale() == 'fr') {
+  	loadingScreen.setSize(210, 80)
+  	loadingScreen.loadFile('loading_fr.html')
+  } else {
+  	loadingScreen.loadFile('loading.html')
+  }
+  //loadingScreen.loadFile('loading.html');
+
   loadingScreen.on('closed', () => loadingScreen = null);
   loadingScreen.webContents.on('did-finish-load', () => {
     loadingScreen.show();
@@ -86,13 +97,19 @@ function createWindow () {
 		alwaysOnTop: true,
 		transparent: true,
 		resizable: true,
+		enableLargerThanScreen: true,
 		webPreferences: {
 			nodeIntegration: true
 		},
 		show: false
 	})
 
-	win.loadFile('index.html')
+	if (app.getLocale() == 'fr') {
+		win.loadFile('index_fr.html')
+	} else {
+		win.loadFile('index.html')
+	}
+	//win.loadFile('index.html')
 
 	ipcMain.on('close-me', (evt, arg) => {
 		app.quit()
