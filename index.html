@@ -5,21 +5,27 @@
     <title>Frame | Escartem</title>
     <link rel="stylesheet" type="text/css" href="normalize.css">
     <style>
+    html, body {
+        height: 100%;
+    }
 
     .border {
         /* background-color: gray;" */
-        margin: 3px;
+        position: fixed;
+        overflow-y: hidden;
+        overflow-x: hidden;
+        height: 98.4vh;
+        width: 98.4vw;
         border-color: rgb(99, 99, 99);
         border-radius: 10px;
         border-width: 10px;
         border: solid rgb(99, 99, 99) 4px;
-        height: 97vh;
     }
 
     .main {
         position: relative;
         -webkit-app-region: drag;
-        height: 97vh;
+        height: 100%;
         width: 100%;
         background-color: white;
         border-color: white;
