@@ -4,6 +4,9 @@ const path = require('path')
 
 const squirrelUrl = "https://github.com/Escartem/Frame/releases/latest/download/";
 
+var appdata = app.getPath('userData')
+//console.log(appdata)
+
 const startAutoUpdater = (squirrelUrl) => {
   // The Squirrel application will watch the provided URL
   electron.autoUpdater.setFeedURL(`${squirrelUrl}/win64/`);
@@ -69,7 +72,7 @@ const createLoadingScreen = () => {
     transparent: true
   }));
 
-  console.log(app.getLocale())
+  //console.log(app.getLocale())
   if (app.getLocale() == 'fr') {
   	loadingScreen.setSize(210, 80)
   	loadingScreen.loadFile('loading_fr.html')
