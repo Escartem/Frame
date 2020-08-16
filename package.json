@@ -26,7 +26,10 @@
     "electron": "^9.1.0",
     "electron-builder": "^22.3.2",
     "electron-packager": "^15.0.0",
-    "minimist": ">=0.2.1",
-    "update-electron-app": "^1.5.0"
+    "minimist": ">=0.2.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Escartem/Frame.git"
   }
 }
