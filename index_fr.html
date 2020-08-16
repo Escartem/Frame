@@ -80,9 +80,15 @@
                         <img src="https://escartem.github.io/electron/frame/1.1.1/minimize.png" id="minimizeApp" width="13" height="13" class="btn-min" alt="Réduire" title="Réduire">
                     </div>
                 </div>
-                <iframe src="https://escartem.github.io/electron/frame/1.1.1/index_fr.html" title="Main" width=100% height=97% frameBorder="0" scrolling="no"></iframe>
+                <iframe src="about:blank" title="Main" width=100% height=97% frameBorder="0" scrolling="no" id="mainFrame"></iframe>
             </div>
         </div>
+        <script>
+            var appVersion = require('electron').remote.app.getVersion();
+            //console.log(appVersion);
+            const frame = document.getElementById("mainFrame");
+            frame.src = "https://escartem.github.io/electron/frame/indexV2?version=" + appVersion + "&lang=fr";
+        </script>
         <script>
         const { ipcRenderer } = require('electron');
         const closeApp = document.getElementById('closeApp');
