@@ -64,8 +64,8 @@ const local = app.getLocale()
 
 const createLoadingScreen = () => {
   loadingScreen = new BrowserWindow(Object.assign({
-    width: 185,
-    height: 80,
+    width: 260,
+    height: 100,
     frame: false,
     resizable: false,
     alwaysOnTop: true,
@@ -73,21 +73,23 @@ const createLoadingScreen = () => {
   }));
 
   //console.log(app.getLocale())
-  if (app.getLocale() == 'fr') {
-  	loadingScreen.setSize(210, 80)
-  	loadingScreen.loadFile('loading_fr.html')
-  } else {
-  	loadingScreen.loadFile('loading.html')
-  }
-  //loadingScreen.loadFile('loading.html');
+  //if (app.getLocale() == 'fr') {
+  	//loadingScreen.setSize(260, 130)
+  	//loadingScreen.loadFile('loading.html')
+  //} else {
+  	//loadingScreen.loadFile('loading.html')
+  //}
+  loadingScreen.loadFile('loading.html');
 
   loadingScreen.on('closed', () => loadingScreen = null);
   loadingScreen.webContents.on('did-finish-load', () => {
-    loadingScreen.show();
+    setTimeout(() => {
+      loadingScreen.show();
+    }, 2000)
   });
   setTimeout(() => {
     createWindow();
-  }, 2000);
+  }, 4000);
 }
 
 function createWindow () {
@@ -102,7 +104,8 @@ function createWindow () {
 		resizable: true,
 		enableLargerThanScreen: true,
 		webPreferences: {
-			nodeIntegration: true
+			nodeIntegration: true,
+      enableRemoteModule: true
 		},
 		show: false
 	})
@@ -110,7 +113,7 @@ function createWindow () {
 	if (app.getLocale() == 'fr') {
 		win.loadFile('index_fr.html')
 	} else {
-		win.loadFile('index.html')
+		win.loadFile('index_en.html')
 	}
 	//win.loadFile('index.html')
 
