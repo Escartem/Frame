@@ -2,21 +2,54 @@
 <html>
 <head>
 	<title>Loading</title>
+	<link rel="stylesheet" href="stylesheet.css" type="text/css" charset="utf-8" />
 	<style>
+		.fade-in {
+			animation: fadeIn ease 1.5s;
+		}
+		@keyframes fadeIn {
+			0% { opacity: 0; }
+			100% { opacity: 100; }
+		}
 		.Main {
-			background-color: rgb(143, 143, 143);
+			background-color: #D9AFD9;
+			background-image: linear-gradient(45deg, #D9AFD9 0%, #97D9E1 64%, #0effd6 100%);
 			border-radius: 20px;
-			width: 175px;
-			height: 40px;
+			width: 250px;
+			height: 50px;
 			text-align: center;
-			vertical-align: bottom;
+			vertical-align: text-top;
 			font: caption;
+		}
+		.text {
+			background-color: #FAD961;
+			background-image: linear-gradient(124deg, #FAD961 0%, #F76B1C 29%, #ff4848 100%);
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+			line-height: 50px;
+			vertical-align: text-top;
+			font-family: 'sf_ui_displaylight';
 		}
 	</style>
 </head>
 <body>
-	<div class="Main">
-		<h1>Loading</h1>
+	<div class="fade-in">
+		<div class="Main">
+			<h1 class="text" id="text">Loading</h1>
+		</div>
 	</div>
+	<script type="text/javascript">
+    	function setLang() {
+    		var lang = navigator.language
+
+    		if (lang == 'fr') {
+    			document.getElementById('text').innerHTML = 'Chargement';
+    		} else if (lang == 'en') {
+    			document.getElementById('text').innerHTML = 'Loading';
+    		}
+    	}
+
+    	setLang();
+    </script>
 </body>
 </html>

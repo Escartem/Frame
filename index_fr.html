@@ -5,6 +5,14 @@
     <title>Frame | Escartem</title>
     <link rel="stylesheet" type="text/css" href="normalize.css">
     <style>
+    .fade-in {
+        animation: fadeIn ease 2s;
+    }
+    @keyframes fadeIn {
+        0% { opacity: 0; }
+        100% { opacity: 100; }
+    }
+
     html, body {
         height: 100%;
     }
@@ -70,43 +78,45 @@
 </head>
 
 <body>
-    <div class="fade">
-        <div class="border">
-            <div class="main">
-                <div class="img">
-                    <div class="overlay">
-                        <img src="https://escartem.github.io/electron/frame/1.1.1/close.png" id="closeApp" width="13" height="13" class="btn-close" alt="Fermer" title="Fermer">
-                        <img src="https://escartem.github.io/electron/frame/1.1.1/MinMax.png" id="MinMax" width="13" height="13" class="btn-minmax" alt="Plein écran" title="Plein écran">
-                        <img src="https://escartem.github.io/electron/frame/1.1.1/minimize.png" id="minimizeApp" width="13" height="13" class="btn-min" alt="Réduire" title="Réduire">
+    <div class="fade-in">
+        <div class="fade">
+            <div class="border">
+                <div class="main">
+                    <div class="img">
+                        <div class="overlay">
+                            <img src="https://escartem.github.io/electron/frame/1.1.1/close.png" id="closeApp" width="13" height="13" class="btn-close" alt="Fermer" title="Fermer">
+                            <img src="https://escartem.github.io/electron/frame/1.1.1/MinMax.png" id="MinMax" width="13" height="13" class="btn-minmax" alt="Plein écran" title="Plein écran">
+                            <img src="https://escartem.github.io/electron/frame/1.1.1/minimize.png" id="minimizeApp" width="13" height="13" class="btn-min" alt="Réduire" title="Réduire">
+                        </div>
                     </div>
+                    <iframe src="about:blank" title="Main" width=100% height=97% frameBorder="0" scrolling="no" id="mainFrame"></iframe>
                 </div>
-                <iframe src="about:blank" title="Main" width=100% height=97% frameBorder="0" scrolling="no" id="mainFrame"></iframe>
             </div>
+            <script>
+                var appVersion = require('electron').remote.app.getVersion();
+                //console.log(appVersion);
+                const frame = document.getElementById("mainFrame");
+                frame.src = "https://escartem.github.io/electron/frame/indexV2?version=" + appVersion + "&lang=fr";
+            </script>
+            <script>
+            const { ipcRenderer } = require('electron');
+            const closeApp = document.getElementById('closeApp');
+            const minimizeApp = document.getElementById('minimizeApp');
+            const MinMax = document.getElementById('MinMax')
+            closeApp.addEventListener('click', () => {
+                ipcRenderer.send('close-me')
+            });
+            minimizeApp.addEventListener('click', () => {
+                ipcRenderer.send('minimize')
+            });
+            MinMax.addEventListener('click', () => {
+                ipcRenderer.send('MinMax')
+            });
+            </script>
+            <script>
+            require('./renderer.js')
+            </script>
         </div>
-        <script>
-            var appVersion = require('electron').remote.app.getVersion();
-            //console.log(appVersion);
-            const frame = document.getElementById("mainFrame");
-            frame.src = "https://escartem.github.io/electron/frame/indexV2?version=" + appVersion + "&lang=fr";
-        </script>
-        <script>
-        const { ipcRenderer } = require('electron');
-        const closeApp = document.getElementById('closeApp');
-        const minimizeApp = document.getElementById('minimizeApp');
-        const MinMax = document.getElementById('MinMax')
-        closeApp.addEventListener('click', () => {
-            ipcRenderer.send('close-me')
-        });
-        minimizeApp.addEventListener('click', () => {
-            ipcRenderer.send('minimize')
-        });
-        MinMax.addEventListener('click', () => {
-            ipcRenderer.send('MinMax')
-        });
-        </script>
-        <script>
-        require('./renderer.js')
-        </script>
     </div>
 </body>
 
