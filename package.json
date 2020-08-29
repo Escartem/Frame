@@ -1,6 +1,6 @@
 {
   "name": "frame",
-  "version": "2.2.0",
+  "version": "2.2.1",
   "description": "frameless app",
   "main": "main.js",
   "scripts": {
@@ -15,6 +15,11 @@
     "win": {
       "target": "nsis",
       "icon": "icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "createDesktopShortcut": true
     }
   },
   "author": "Escartem",
