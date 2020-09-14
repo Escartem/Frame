@@ -1,14 +1,15 @@
 [![Documentation Status](https://readthedocs.org/projects/frame/badge/?version=latest)](https://frame.readthedocs.io/en/latest/?badge=latest)
 ![Node.js CI](https://github.com/Escartem/Frame/workflows/Node.js%20CI/badge.svg)
 
-## Frame
- Frameless Blank App
-
-## What is this ?
+# Description
  This is a simple blank app to cover some parts or the entire screen
- This can be used by teachers for example
+ This can be used as a sample frame for electron apps
 
-## Installation
+# Download
+ [Windows Installer](https://github.com/Escartem/Frame/releases/latest/download/frame-Setup-2.2.1.exe)
+ [Portable Version](https://github.com/Escartem/Frame/releases/latest/download/frame-2.2.1-win-unpacked.rar)
+
+# Getting the source code
  If you want to get the source code and edit the app :
 
  ```bash
