@@ -7,6 +7,7 @@
 
 # Download
  [Windows Installer](https://github.com/Escartem/Frame/releases/latest/download/frame-Setup-2.2.1.exe)
+ 
  [Portable Version](https://github.com/Escartem/Frame/releases/latest/download/frame-2.2.1-win-unpacked.rar)
 
 # Getting the source code
