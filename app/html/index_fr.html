@@ -17,6 +17,15 @@
         height: 100%;
     }
 
+    .border {
+        /* background-color: gray;" */
+        position: fixed;
+        top: 0; right: 0; bottom: 0; left: 0;
+        border-color: rgb(99, 99, 99);
+        border-radius: 10px;
+        border-width: 10px;
+        border: solid rgba(62, 73, 83, 1) 4px;
+    }
 
     .main {
         position: relative;
@@ -62,6 +71,35 @@
         }
         */
 
+    .closeAnimation {
+        -webkit-animation: fadeout 1s linear 1 forwards;
+    }
+
+    @-webkit-keyframes fadeout {
+        0% {
+            opacity: 1;
+            background-color: transparent;
+        }
+
+        15% {
+            opacity: 1;
+            background-color: transparent;
+        }
+
+        75% {
+            opacity: 0;
+            background-color: transparent;
+        }
+
+        100% {
+            opacity: 0;
+            background-color: rgba(62, 73, 83, 1);
+        }
+    }
+
+    .hidden {
+        display: none;
+    }
 
     </style>
 </head>
@@ -74,6 +112,9 @@
                     <div class="main">
                         <div class="img">
                             <div class="overlay">
+                                <img src="https://escartem.github.io/electron/frame/1.1.1/close.png" id="closeApp" width="13" height="13" class="btn-close" alt="Fermer" title="Fermer" onclick="closeFunction()">
+                                <img src="https://escartem.github.io/electron/frame/1.1.1/MinMax.png" id="MinMax" width="13" height="13" class="btn-minmax" alt="Plein écran" title="Plein écran">
+                                <img src="https://escartem.github.io/electron/frame/1.1.1/minimize.png" id="minimizeApp" width="13" height="13" class="btn-min" alt="Réduire" title="Réduire">
                             </div>
                         </div>
                         <iframe src="about:blank" title="Main" width=100% height=97% frameBorder="0" scrolling="no" id="mainFrame"></iframe>
@@ -90,6 +131,12 @@
                 const closeApp = document.getElementById('closeApp');
                 const minimizeApp = document.getElementById('minimizeApp');
                 const MinMax = document.getElementById('MinMax')
+                function closeFunction() {
+                    document.getElementById('close-anim').classList.add("closeAnimation");
+                    setTimeout(() => {
+                        ipcRenderer.send('close-me')
+                    }, 1000);
+                }
                 minimizeApp.addEventListener('click', () => {
                     ipcRenderer.send('minimize')
                 });
