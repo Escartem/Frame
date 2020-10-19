@@ -1,9 +1,8 @@
 /node_modules
 /dist
-/idea.sublime
+/app/idea.sublime
 /yarn.lock
 /docs/_build
 /docs/_static
 /docs/_templates
-/app
 /issues
