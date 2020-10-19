@@ -79,7 +79,7 @@ const createLoadingScreen = () => {
   //} else {
   	//loadingScreen.loadFile('loading.html')
   //}
-  loadingScreen.loadFile('loading.html');
+  loadingScreen.loadFile('app/html/loading.html');
 
   loadingScreen.on('closed', () => loadingScreen = null);
   loadingScreen.webContents.on('did-finish-load', () => {
@@ -111,9 +111,9 @@ function createWindow () {
 	})
 
 	if (app.getLocale() == 'fr') {
-		win.loadFile('index_fr.html')
+		win.loadFile('app/html/index_fr.html')
 	} else {
-		win.loadFile('index_en.html')
+		win.loadFile('app/html/index_en.html')
 	}
 	//win.loadFile('index.html')
 
