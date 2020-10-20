@@ -7,9 +7,9 @@
  This can be used as a sample frame for electron apps
 
 # Download
- [Windows Installer](https://github.com/Escartem/Frame/releases/latest/download/frame-Setup-2.2.1.exe)
+ [Windows Installer](https://github.com/Escartem/Frame/releases/latest/download/Frame.2.3.0.Setup.exe)
  
- [Portable Version](https://github.com/Escartem/Frame/releases/latest/download/frame-2.2.1-win-unpacked.rar)
+ [Portable Version](https://github.com/Escartem/Frame/releases/latest/download/Frame.2.3.0.Portable.Setup.exe)
 
 # Getting the source code
  If you want to get the source code and edit the app :
