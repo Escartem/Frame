@@ -1,7 +1,7 @@
 {
   "name": "frame",
-  "version": "2.3.0",
-  "description": "frameless app",
+  "version": "2.4.0",
+  "description": "App framework",
   "main": "app/main.js",
   "scripts": {
     "start": "electron .",
