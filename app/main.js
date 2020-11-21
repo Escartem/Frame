@@ -64,7 +64,7 @@ const local = app.getLocale()
 
 const createLoadingScreen = () => {
   loadingScreen = new BrowserWindow(Object.assign({
-    width: 260,
+    width: 270,
     height: 100,
     frame: false,
     resizable: false,
@@ -79,9 +79,11 @@ const createLoadingScreen = () => {
   //} else {
   	//loadingScreen.loadFile('loading.html')
   //}
+
   loadingScreen.loadFile('app/html/loading.html');
 
   loadingScreen.on('closed', () => loadingScreen = null);
+
   loadingScreen.webContents.on('did-finish-load', () => {
     setTimeout(() => {
       loadingScreen.show();
@@ -89,7 +91,7 @@ const createLoadingScreen = () => {
   });
   setTimeout(() => {
     createWindow();
-  }, 4000);
+  }, 8000);
 }
 
 function createWindow () {

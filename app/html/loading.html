@@ -5,47 +5,64 @@
 	<link rel="stylesheet" href="../css/stylesheet.css" type="text/css" charset="utf-8" />
 	<style>
 		.fade-in {
-			animation: fadeIn ease 1.5s;
+			animation: fadeIn ease 2.5s;
 		}
 		@keyframes fadeIn {
 			0% { opacity: 0; }
 			100% { opacity: 100; }
 		}
 		.Main {
-			background-color: #D9AFD9;
-			background-image: linear-gradient(45deg, #D9AFD9 0%, #97D9E1 64%, #0effd6 100%);
+			background-color: #24c5f3;
+			background-image: linear-gradient(225deg, #24c5f3 17%, #9700de 32%, #de00ff 47%, #eb1769 61%, #f99030 84%);
 			border-radius: 20px;
 			width: 250px;
 			height: 50px;
 			text-align: center;
 			vertical-align: text-top;
 			font: caption;
+			background-size: 200% auto;
+			background-position: 0px 0px;
+			animation: bgAnim 6s 2;
+			animation-direction: alternate;
+		}
+		@keyframes bgAnim {
+			0% { background-position: 0 0; }
+			100% {background-position: 100% 0; }
 		}
 		.text {
-			background-color: #FAD961;
-			background-image: linear-gradient(124deg, #FAD961 0%, #F76B1C 29%, #ff4848 100%);
+			padding: 7px;
+			margin: 0;
+			background-color: #ecbff5;
+			background-image: linear-gradient(225deg, #ecbff5 30%, #9599E2 49%, #8BC6EC 75%, #b3e6f3 79%);
 			-webkit-background-clip: text;
 			-webkit-text-fill-color: transparent;
-			line-height: 50px;
-			vertical-align: text-top;
+			font-size: 14px;
+			line-height: 24px;
 			font-family: 'sf_ui_displaylight';
+		}
+		.text:first-line {
+			font-size: 32px;
 		}
 	</style>
 </head>
 <body>
 	<div class="fade-in">
 		<div class="Main">
-			<h1 class="text" id="text">Loading</h1>
+			<h1 class="text" id="text">Loading </br> V.0.0.0</h1>
+			<!--
+			<small class="text" id="text">test</small>
+		-->
 		</div>
 	</div>
 	<script type="text/javascript">
     	function setLang() {
     		var lang = navigator.language
+    		var version = "2.4.0"
 
     		if (lang == 'fr') {
-    			document.getElementById('text').innerHTML = 'Chargement';
-    		} else if (lang == 'en') {
-    			document.getElementById('text').innerHTML = 'Loading';
+    			document.getElementById('text').innerHTML = 'Chargement</br>V.'+version;
+    		} else {
+    			document.getElementById('text').innerHTML = 'Loading</br>V.'+version;
     		}
     	}
 
