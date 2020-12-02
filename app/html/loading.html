@@ -57,7 +57,7 @@
 	<script type="text/javascript">
     	function setLang() {
     		var lang = navigator.language
-    		var version = "2.4.0"
+        var version = require('electron').remote.app.getVersion()
 
     		if (lang == 'fr') {
     			document.getElementById('text').innerHTML = 'Chargement</br>V.'+version;
