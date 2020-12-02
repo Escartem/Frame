@@ -186,7 +186,13 @@ function createWindow() {
 
     ipcMain.on('MinMax', (evt, arg) => {
         // TODO fix this
-        win.isMaximized() ? win.unmaximize() : win.maximize();
+        console.log(win.isMaximized())
+        if (win.isMaximized == true){
+            win.unmaximize()
+        } else {
+            win.maximize()
+        }
+        //win.isMaximized() ? win.unmaximize() : win.maximize();
     })
 
     ipcMain.on('open-logs', (evt, arg) => {
