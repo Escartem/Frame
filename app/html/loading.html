@@ -7,6 +7,7 @@
     var appVersion = require('electron').remote.app.getVersion();
     const ConfigManager = require('../js/configmanager')
     const { ipcRenderer } = require('electron')
+    var lang = navigator.language
 
 
     setTimeout(() => {
@@ -15,9 +16,13 @@
 
         if (hasSeen == false) {
             if (appVersion == "2.5.0") {
-                ConfigManager.setSeenVersions(appVersion, true)
-                ConfigManager.save()
-                ipcRenderer.send('update-logs-250')
+            	if (lang == 'fr'){
+	                ConfigManager.setSeenVersions(appVersion, true)
+	                ConfigManager.save()
+	                ipcRenderer.send('update-logs-250')
+	            } else {
+	            	ipcRenderer.send('start-app')
+	            }
             }
         } else {
             ipcRenderer.send('start-app')
