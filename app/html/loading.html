@@ -5,6 +5,7 @@
 	<link rel="stylesheet" href="../css/stylesheet.css" type="text/css" charset="utf-8" />
 	<style>
 		.fade-in {
+    <link rel="stylesheet" href="../css/stylesheet.css" type="text/css" charset="utf-8" />
 			animation: fadeIn ease 2.5s;
 		}
 		@keyframes fadeIn {
@@ -45,28 +46,30 @@
 		}
 	</style>
 </head>
+
 <body>
-	<div class="fade-in">
-		<div class="Main">
-			<h1 class="text" id="text">Loading </br> V.0.0.0</h1>
-			<!--
+    <div class="fade-in">
+        <div class="Main">
+            <h1 class="text" id="text">Loading </br> V.0.0.0</h1>
+            <!--
 			<small class="text" id="text">test</small>
 		-->
-		</div>
-	</div>
-	<script type="text/javascript">
-    	function setLang() {
-    		var lang = navigator.language
+        </div>
+    </div>
+    <script type="text/javascript">
+    function setLang() {
+        var lang = navigator.language
         var version = require('electron').remote.app.getVersion()
 
-    		if (lang == 'fr') {
-    			document.getElementById('text').innerHTML = 'Chargement</br>V.'+version;
-    		} else {
-    			document.getElementById('text').innerHTML = 'Loading</br>V.'+version;
-    		}
-    	}
+        if (lang == 'fr') {
+            document.getElementById('text').innerHTML = 'Chargement</br>V.' + version;
+        } else {
+            document.getElementById('text').innerHTML = 'Loading</br>V.' + version;
+        }
+    }
 
-    	setLang();
+    setLang();
     </script>
 </body>
+
 </html>
