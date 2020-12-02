@@ -59,39 +59,77 @@ if (handleSquirrelEvent()) {
 
 let win
 let loadingScreen;
+let updateLogs
 
 const local = app.getLocale()
 
 const createLoadingScreen = () => {
-  loadingScreen = new BrowserWindow(Object.assign({
-    width: 270,
-    height: 100,
-    frame: false,
-    resizable: false,
-    alwaysOnTop: true,
-    transparent: true
-  }));
+    loadingScreen = new BrowserWindow(Object.assign({
+        width: 270,
+        height: 100,
+        frame: false,
+        resizable: false,
+        alwaysOnTop: true,
+        transparent: true,
+        show: false,
+        webPreferences: {
+            nodeIntegration: true,
+            enableRemoteModule: true
+        }
+    }));
 
-  //console.log(app.getLocale())
-  //if (app.getLocale() == 'fr') {
-  	//loadingScreen.setSize(260, 130)
-  	//loadingScreen.loadFile('loading.html')
-  //} else {
-  	//loadingScreen.loadFile('loading.html')
-  //}
+    updateLogs = new BrowserWindow({
+        width: 600,
+        height: 550,
+        frame: false,
+        resizable: false,
+        alwaysOnTop: true,
+        transparent: true,
+        parent: loadingScreen,
+        show: false,
+        webPreferences: {
+            nodeIntegration: true,
+            enableRemoteModule: true
+        }
+    })
 
-  loadingScreen.loadFile('app/html/loading.html');
+    //console.log(app.getLocale())
+    //if (app.getLocale() == 'fr') {
+    //loadingScreen.setSize(260, 130)
+    //loadingScreen.loadFile('loading.html')
+    //} else {
+    //loadingScreen.loadFile('loading.html')
+    //}
 
-  loadingScreen.on('closed', () => loadingScreen = null);
+    var hide = false
 
-  loadingScreen.webContents.on('did-finish-load', () => {
-    setTimeout(() => {
-      loadingScreen.show();
-    }, 2000)
-  });
-  setTimeout(() => {
-    createWindow();
-  }, 8000);
+    loadingScreen.loadFile('app/html/loading.html');
+    updateLogs.loadFile('app/html/changelog/250.html')
+
+    loadingScreen.on('closed', () => loadingScreen = null);
+
+    loadingScreen.webContents.on('did-finish-load', () => {
+        setTimeout(() => {
+            if (hide == false) {
+                loadingScreen.show();
+            } else {
+                loadingScreen.hide()
+            }
+        }, 2000)
+    });
+
+    ipcMain.on('update-logs-250', (evt, arg) => {
+        setTimeout(() => {
+            var hide = true
+            loadingScreen.hide()
+            updateLogs.show()
+        }, 2000)
+    })
+
+    ipcMain.on('start-app', (evt, arg) => {
+        updateLogs.hide()
+        createWindow()
+    })
 }
 
 function createWindow () {

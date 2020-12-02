@@ -2,11 +2,35 @@
 <html>
 
 <head>
-	<title>Loading</title>
-	<link rel="stylesheet" href="../css/stylesheet.css" type="text/css" charset="utf-8" />
-	<style>
-		.fade-in {
+    <title>Loading</title>
+    <script type="text/javascript">
+    var appVersion = require('electron').remote.app.getVersion();
+    const ConfigManager = require('../js/configmanager')
+    const { ipcRenderer } = require('electron')
+
+
+    setTimeout(() => {
+        ConfigManager.load()
+        var hasSeen = ConfigManager.getSeenVersions(appVersion)
+
+        if (hasSeen == false) {
+            if (appVersion == "2.5.0") {
+                ConfigManager.setSeenVersions(appVersion, true)
+                ConfigManager.save()
+                ipcRenderer.send('update-logs-250')
+            }
+        } else {
+            ipcRenderer.send('start-app')
+            //ipcRenderer.send('update-logs-250')
+        }
+    }, 7000)
+    </script>
     <link rel="stylesheet" href="../css/stylesheet.css" type="text/css" charset="utf-8" />
+    <style>
+    	html {
+    		-webkit-user-select: none;
+    	}
+        .fade-in {
 			animation: fadeIn ease 2.5s;
 		}
 		@keyframes fadeIn {
