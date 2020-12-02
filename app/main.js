@@ -1,4 +1,4 @@
-const {app, BrowserWindow, electron, ipcMain} = require('electron')
+const { app, BrowserWindow, electron, ipcMain } = require('electron')
 const { dialog } = require('electron')
 const path = require('path')
 
@@ -8,58 +8,59 @@ var appdata = app.getPath('userData')
 //console.log(appdata)
 
 const startAutoUpdater = (squirrelUrl) => {
-  // The Squirrel application will watch the provided URL
-  electron.autoUpdater.setFeedURL(`${squirrelUrl}/win64/`);
+    // The Squirrel application will watch the provided URL
+    electron.autoUpdater.setFeedURL(`${squirrelUrl}/win64/`);
 
-  // Display a success message on successful update
-  electron.autoUpdater.addListener("update-downloaded", (event, releaseNotes, releaseName) => {
-    electron.dialog.showMessageBox({"message": `The release ${releaseName} has been downloaded`});
-  });
+    // Display a success message on successful update
+    electron.autoUpdater.addListener("update-downloaded", (event, releaseNotes, releaseName) => {
+        electron.dialog.showMessageBox({ "message": `The release ${releaseName} has been downloaded` });
+    });
 
-  // Display an error message on update error
-  electron.autoUpdater.addListener("error", (error) => {
-    electron.dialog.showMessageBox({"message": "Auto updater error: " + error});
-  });
+    // Display an error message on update error
+    electron.autoUpdater.addListener("error", (error) => {
+        electron.dialog.showMessageBox({ "message": "Auto updater error: " + error });
+    });
 
-  // tell squirrel to check for updates
-  electron.autoUpdater.checkForUpdates();
+    // tell squirrel to check for updates
+    electron.autoUpdater.checkForUpdates();
 }
 
 //const response = dialog.showMessageBox(null);
 //console.log(response);
 
 //require('update-electron-app')({
-	//notifyUser: true,
-	//repo: 'escartem/Frame'
+//notifyUser: true,
+//repo: 'escartem/Frame'
 //})
 
 const handleSquirrelEvent = () => {
-  if (process.argv.length === 1) {
-    return false;
-  }
+    if (process.argv.length === 1) {
+        return false;
+    }
 
-  const squirrelEvent = process.argv[1];
-  switch (squirrelEvent) {
-    case '--squirrel-install':
-    case '--squirrel-updated':
-    case '--squirrel-uninstall':
-      setTimeout(app.quit, 1000);
-      return true;
+    const squirrelEvent = process.argv[1];
+    switch (squirrelEvent) {
+        case '--squirrel-install':
+        case '--squirrel-updated':
+        case '--squirrel-uninstall':
+            setTimeout(app.quit, 1000);
+            return true;
 
-    case '--squirrel-obsolete':
-      app.quit();
-      return true;
-  }
+        case '--squirrel-obsolete':
+            app.quit();
+            return true;
+    }
 }
 
 if (handleSquirrelEvent()) {
-  // squirrel event handled and app will exit in 1000ms, so don't do anything else
-  return;
+    // squirrel event handled and app will exit in 1000ms, so don't do anything else
+    return;
 }
 
 let win
-let loadingScreen;
+let loadingScreen
 let updateLogs
+
 
 const local = app.getLocale()
 
@@ -132,64 +133,93 @@ const createLoadingScreen = () => {
     })
 }
 
-function createWindow () {
-	win = new BrowserWindow({
-		width: 810,
-		height: 600,
-		minHeight: 490,
-		minWidth: 490,
-		frame: false,
-		alwaysOnTop: true,
-		transparent: true,
-		resizable: true,
-		enableLargerThanScreen: true,
-		webPreferences: {
-			nodeIntegration: true,
-      enableRemoteModule: true
-		},
-		show: false
-	})
+function createWindow() {
+    win = new BrowserWindow({
+        width: 810,
+        height: 600,
+        minHeight: 490,
+        minWidth: 490,
+        frame: false,
+        alwaysOnTop: true,
+        transparent: true,
+        resizable: true,
+        enableLargerThanScreen: true,
+        webPreferences: {
+            nodeIntegration: true,
+            enableRemoteModule: true
+        },
+        show: false
+    })
 
-	if (app.getLocale() == 'fr') {
-		win.loadFile('app/html/index_fr.html')
-	} else {
-		win.loadFile('app/html/index_en.html')
-	}
-	//win.loadFile('index.html')
+    updateLogsApp = new BrowserWindow({
+        width: 600,
+        height: 550,
+        frame: false,
+        resizable: false,
+        alwaysOnTop: true,
+        transparent: true,
+        parent: win,
+        show: false,
+        webPreferences: {
+            nodeIntegration: true,
+            enableRemoteModule: true
+        }
+    })
 
-	ipcMain.on('close-me', (evt, arg) => {
-		app.quit()
-	})
 
-	ipcMain.on('minimize', (evt, arg) => {
-		win.minimize();
-	})
-    
+    updateLogsApp.loadFile('app/html/changelog/250App.html')
+
+    if (app.getLocale() == 'fr') {
+        win.loadFile('app/html/index_fr.html')
+    } else {
+        win.loadFile('app/html/index_en.html')
+    }
+    //win.loadFile('index.html')
+
+    ipcMain.on('close-me', (evt, arg) => {
+        app.quit()
+    })
+
+    ipcMain.on('minimize', (evt, arg) => {
+        win.minimize();
+    })
+
     ipcMain.on('MinMax', (evt, arg) => {
+        // TODO fix this
         win.isMaximized() ? win.unmaximize() : win.maximize();
     })
 
-	win.on('closed', function () {
-		win = null
-	})
-	win.webContents.on('did-finish-load', () => {
-    if (loadingScreen) {
-      loadingScreen.close();
-    }
-    win.show();
-    //dialog.showMessageBox(null);
-  });
+    ipcMain.on('open-logs', (evt, arg) => {
+        //win.hide()
+        updateLogsApp.show()
+    })
+
+    ipcMain.on('close-logs', (evt, arg) => {
+        //win.show()
+        updateLogsApp.hide()
+    })
+
+    win.on('closed', function() {
+        app.quit()
+    })
+    win.webContents.on('did-finish-load', () => {
+        if (loadingScreen) {
+            loadingScreen.close();
+        }
+        win.show();
+        //dialog.showMessageBox(null);
+    });
 }
 
 app.on('ready', () => {
-  //if (process.env.NODE_ENV !== "dev") startAutoUpdater(squirrelUrl)
-  createLoadingScreen();
+    //if (process.env.NODE_ENV !== "dev") startAutoUpdater(squirrelUrl)
+    createLoadingScreen();
 })
 
-app.on('window-all-closed', function () {
-	if (process.platform !== 'darwin') app.quit()
+app.on('window-all-closed', function() {
+    if (process.platform !== 'darwin') app.quit()
 })
 
-app.on('activate', function () {
-	if (win === null) createWindow()
+app.on('activate', function() {
+    if (win === null) createWindow()
 })

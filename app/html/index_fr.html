@@ -4,22 +4,33 @@
 <head>
     <title>Frame | Escartem</title>
     <link rel="stylesheet" type="text/css" href="../css/normalize.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
     <style>
     .fade-in {
         animation: fadeIn ease 2s;
     }
+
     @keyframes fadeIn {
-        0% { opacity: 0; }
-        100% { opacity: 100; }
+        0% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 100;
+        }
     }
 
-    html, body {
+    html,
+    body {
         height: 100%;
     }
 
     .border {
         position: fixed;
-        top: 0; right: 0; bottom: 0; left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
         border-color: rgb(99, 99, 99);
         border-radius: 10px;
         border-width: 10px;
@@ -46,7 +57,10 @@
         -webkit-app-region: no-drag;
     }
 
-    .btn-close, .btn-minmax, .btn-min {
+    .btn-close,
+    .btn-minmax,
+    .btn-min,
+    .update-logs {
         width: 13px;
         -webkit-app-region: no-drag;
     }
@@ -61,6 +75,16 @@
 
     .btn-min:hover {
         opacity: 0.6;
+    }
+
+    .update-logs:hover {
+        opacity: 0.6;
+    }
+
+    .overlay-right {
+        position: absolute;
+        top: -2px;
+        right: 10px;
     }
 
     /*
@@ -99,7 +123,6 @@
     .hidden {
         display: none;
     }
-
     </style>
 </head>
 
@@ -115,36 +138,54 @@
                                 <img src="https://escartem.github.io/electron/frame/1.1.1/MinMax.png" id="MinMax" width="13" height="13" class="btn-minmax" alt="Plein écran" title="Plein écran">
                                 <img src="https://escartem.github.io/electron/frame/1.1.1/minimize.png" id="minimizeApp" width="13" height="13" class="btn-min" alt="Réduire" title="Réduire">
                             </div>
+                            <div class="overlay-right">
+                                <img src="https://escartem.github.io/electron/frame/1.1.1/gray.png" id="update-logs" width="13" height="13" class="update-logs" alt="Notes de mise à jour" title="Notes de mises à jour">
+                            </div>
                         </div>
                         <iframe src="about:blank" title="Main" width=100% height=97% frameBorder="0" scrolling="no" id="mainFrame"></iframe>
                     </div>
                 </div>
                 <script>
-                    var appVersion = require('electron').remote.app.getVersion();
-                    //console.log(appVersion);
-                    const frame = document.getElementById("mainFrame");
-                    frame.src = "https://escartem.github.io/electron/frame/V3/indexV3?version=" + appVersion + "&lang=fr";
+                var appVersion = require('electron').remote.app.getVersion();
+                //console.log(appVersion);
+                const frame = document.getElementById("mainFrame");
+                frame.src = "https://escartem.github.io/electron/frame/V3/indexV3?version=" + appVersion + "&lang=fr";
                 </script>
                 <script>
                 const { ipcRenderer } = require('electron');
                 const closeApp = document.getElementById('closeApp');
                 const minimizeApp = document.getElementById('minimizeApp');
                 const MinMax = document.getElementById('MinMax')
+                const logsButton = document.getElementById('update-logs')
+
                 function closeFunction() {
                     document.getElementById('close-anim').classList.add("closeAnimation");
                     setTimeout(() => {
                         ipcRenderer.send('close-me')
                     }, 1000);
                 }
+
                 minimizeApp.addEventListener('click', () => {
                     ipcRenderer.send('minimize')
                 });
+
                 MinMax.addEventListener('click', () => {
                     ipcRenderer.send('MinMax')
                 });
+
+                logsButton.addEventListener('click', () => {
+                    ipcRenderer.send('open-logs')
+                })
                 </script>
                 <script>
                 require('../js/renderer.js')
+                </script>
+                <script>
+                if (cursorX <= 0.2 * windowW || cursorX >= 0.8 * windowW || cursorY <= 0.15 * windowH || cursorY >= 0.85 * windowH) {
+                    console.log("out of bound!")
+                } else {
+                    console.log("inside the bound!");
+                }
                 </script>
             </div>
         </div>
