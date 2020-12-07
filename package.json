@@ -27,7 +27,7 @@
   "devDependencies": {
     "electron": "^11.0.3",
     "electron-builder": "^22.9.1",
-    "electron-packager": "^15.1.0",
+    "electron-packager": "^15.2.0",
     "minimist": ">=0.2.1"
   },
   "repository": {
