@@ -15,15 +15,9 @@
         var hasSeen = ConfigManager.getSeenVersions(appVersion)
 
         if (hasSeen == false) {
-            if (appVersion == "2.5.0") {
-            	if (lang == 'fr'){
-	                ConfigManager.setSeenVersions(appVersion, true)
-	                ConfigManager.save()
-	                ipcRenderer.send('update-logs-250')
-	            } else {
-	            	ipcRenderer.send('start-app')
-	            }
-            }
+	        ConfigManager.setSeenVersions(appVersion, true)
+	        ConfigManager.save()
+	        ipcRenderer.send('update-logs')
         } else {
             ipcRenderer.send('start-app')
             //ipcRenderer.send('update-logs-250')
