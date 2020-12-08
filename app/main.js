@@ -105,7 +105,11 @@ const createLoadingScreen = () => {
     var hide = false
 
     loadingScreen.loadFile('app/html/loading.html');
-    updateLogs.loadFile('app/html/changelog/250.html')
+    if (app.getLocale() == 'fr') {
+        updateLogs.loadFile('app/html/changelogs/fr_FR/251/changelog.html')
+    } else {
+        updateLogs.loadFile('app/html/changelogs/en_US/251/changelog.html')
+    }
 
     loadingScreen.on('closed', () => loadingScreen = null);
 
@@ -167,7 +171,11 @@ function createWindow() {
     })
 
 
-    updateLogsApp.loadFile('app/html/changelog/250App.html')
+    if (app.getLocale() == 'fr') {
+        updateLogsApp.loadFile('app/html/changelogs/fr_FR/251/app-changelog.html')
+    } else {
+        updateLogsApp.loadFile('app/html/changelogs/en_US/251/app-changelog.html')
+    }
 
     if (app.getLocale() == 'fr') {
         win.loadFile('app/html/index_fr.html')
