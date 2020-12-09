@@ -8,18 +8,28 @@
     .fade-in {
         animation: fadeIn ease 2s;
     }
+
     @keyframes fadeIn {
-        0% { opacity: 0; }
-        100% { opacity: 100; }
+        0% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 100;
+        }
     }
 
-    html, body {
+    html,
+    body {
         height: 100%;
     }
 
     .border {
         position: fixed;
-        top: 0; right: 0; bottom: 0; left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
         border-color: rgb(99, 99, 99);
         border-radius: 10px;
         border-width: 10px;
@@ -46,7 +56,9 @@
         -webkit-app-region: no-drag;
     }
 
-    .btn-close, .btn-minmax, .btn-min {
+    .btn-close,
+    .btn-minmax,
+    .btn-min {
         width: 13px;
         -webkit-app-region: no-drag;
     }
@@ -99,7 +111,6 @@
     .hidden {
         display: none;
     }
-
     </style>
 </head>
 
@@ -120,16 +131,17 @@
                     </div>
                 </div>
                 <script>
-                    var appVersion = require('electron').remote.app.getVersion();
-                    //console.log(appVersion);
-                    const frame = document.getElementById("mainFrame");
-                    frame.src = "https://escartem.github.io/electron/frame/V3/indexV3?version=" + appVersion + "&lang=en";
+                var appVersion = require('electron').remote.app.getVersion();
+                //console.log(appVersion);
+                const frame = document.getElementById("mainFrame");
+                frame.src = "https://escartem.github.io/electron/frame/V3/indexV3?version=" + appVersion + "&lang=en";
                 </script>
                 <script>
                 const { ipcRenderer } = require('electron');
                 const closeApp = document.getElementById('closeApp');
                 const minimizeApp = document.getElementById('minimizeApp');
                 const MinMax = document.getElementById('MinMax')
+
                 function closeFunction() {
                     document.getElementById('close-anim').classList.add("closeAnimation");
                     setTimeout(() => {
