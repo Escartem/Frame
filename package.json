@@ -1,6 +1,6 @@
 {
   "name": "frame",
-  "version": "2.5.0",
+  "version": "2.5.1",
   "description": "App framework",
   "main": "app/main.js",
   "scripts": {
