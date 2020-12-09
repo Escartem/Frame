@@ -78,10 +78,11 @@ const createLoadingScreen = () => {
             enableRemoteModule: true
         }
     }));
-
+    // 550
+    // 475
     updateLogs = new BrowserWindow({
         width: 600,
-        height: 550,
+        height: 475,
         frame: false,
         resizable: false,
         alwaysOnTop: true,
@@ -123,7 +124,7 @@ const createLoadingScreen = () => {
         }, 2000)
     });
 
-    ipcMain.on('update-logs-250', (evt, arg) => {
+    ipcMain.on('update-logs', (evt, arg) => {
         setTimeout(() => {
             var hide = true
             loadingScreen.hide()
@@ -157,7 +158,7 @@ function createWindow() {
 
     updateLogsApp = new BrowserWindow({
         width: 600,
-        height: 550,
+        height: 475,
         frame: false,
         resizable: false,
         alwaysOnTop: true,
