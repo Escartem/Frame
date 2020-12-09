@@ -58,7 +58,8 @@
 
     .btn-close,
     .btn-minmax,
-    .btn-min {
+    .btn-min,
+    .update-logs {
         width: 13px;
         -webkit-app-region: no-drag;
     }
@@ -73,6 +74,16 @@
 
     .btn-min:hover {
         opacity: 0.6;
+    }
+
+    .update-logs:hover {
+        opacity: 0.6;
+    }
+
+    .overlay-right {
+        position: absolute;
+        top: -2px;
+        right: 10px;
     }
 
     /*
@@ -126,6 +137,9 @@
                                 <img src="https://escartem.github.io/electron/frame/1.1.1/MinMax.png" id="MinMax" width="13" height="13" class="btn-minmax" alt="Fullscreen" title="Fullscreen">
                                 <img src="https://escartem.github.io/electron/frame/1.1.1/minimize.png" id="minimizeApp" width="13" height="13" class="btn-min" alt="Reduce" title="Reduce">
                             </div>
+                            <div class="overlay-right">
+                                <img src="https://escartem.github.io/electron/frame/1.1.1/gray.png" id="update-logs" width="13" height="13" class="update-logs" alt="Changelog" title="Changelog">
+                            </div>
                         </div>
                         <iframe src="about:blank" title="Main" width=100% height=97% frameBorder="0" scrolling="no" id="mainFrame"></iframe>
                     </div>
@@ -141,6 +155,7 @@
                 const closeApp = document.getElementById('closeApp');
                 const minimizeApp = document.getElementById('minimizeApp');
                 const MinMax = document.getElementById('MinMax')
+                const logsButton = document.getElementById('update-logs')
 
                 function closeFunction() {
                     document.getElementById('close-anim').classList.add("closeAnimation");
@@ -148,12 +163,18 @@
                         ipcRenderer.send('close-me')
                     }, 1000);
                 }
+
                 minimizeApp.addEventListener('click', () => {
                     ipcRenderer.send('minimize')
                 });
+
                 MinMax.addEventListener('click', () => {
                     ipcRenderer.send('MinMax')
                 });
+
+                logsButton.addEventListener('click', () => {
+                    ipcRenderer.send('open-logs')
+                })
                 </script>
                 <script>
                 require('../css/renderer.js')
