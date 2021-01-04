@@ -1,15 +1,15 @@
-const fs = require('fs-extra')
-const os = require('os')
-const path = require('path')
+const fs = require("fs-extra")
+const os = require("os")
+const path = require("path")
 
-const LoggerScript = require('../js/logger')
-const logger = LoggerScript('%c[ConfigManager]', 'color: #a02D2a; font-weight: bold')
+const LoggerScript = require("../js/logger")
+const logger = LoggerScript("%c[ConfigManager]", "color: #a02D2a; font-weight: bold")
 
-const appDir = process.env.CONFIG_DIRECT_PATH || require('electron').remote.app.getPath('userData')
-const configPath = path.join(appDir, 'update-logs.json')
+const appDir = process.env.CONFIG_DIRECT_PATH || require("electron").remote.app.getPath("userData")
+const configPath = path.join(appDir, "update-logs.json")
 
-logger.log('Recherche de la configuration')
-logger.log('Emplacement : ' + configPath)
+logger.log("Recherche de la configuration")
+logger.log("Emplacement : " + configPath)
 
 const LOGS = {
 	hasSeen: {
@@ -21,15 +21,15 @@ const LOGS = {
 let config = null
 
 exports.save = function() {
-	fs.writeFileSync(configPath, JSON.stringify(config, null, 4), 'UTF-8')
-	//logger.log('La configuration a été sauvegardée')
+	fs.writeFileSync(configPath, JSON.stringify(config, null, 4), "UTF-8")
+	//logger.log("La configuration a été sauvegardée")
 }
 
 exports.load = function() {
 	let doLoad = true
 
 	if(!fs.existsSync(configPath)){
-		fs.ensureDirSync(path.join(configPath, '..'))
+		fs.ensureDirSync(path.join(configPath, ".."))
 		doLoad = false
 		config = LOGS
 		exports.save()
@@ -37,13 +37,13 @@ exports.load = function() {
 	if(doLoad){
         let doValidate = false
         try {
-            config = JSON.parse(fs.readFileSync(configPath, 'UTF-8'))
+            config = JSON.parse(fs.readFileSync(configPath, "UTF-8"))
             doValidate = true
         } catch (err){
             logger.error(err)
-            logger.log('Configuration file contains malformed JSON or is corrupt.')
-            logger.log('Generating a new configuration file.')
-            fs.ensureDirSync(path.join(configPath, '..'))
+            logger.log("Configuration file contains malformed JSON or is corrupt.")
+            logger.log("Generating a new configuration file.")
+            fs.ensureDirSync(path.join(configPath, ".."))
             config = LOGS
             exports.save()
         }
@@ -52,19 +52,19 @@ exports.load = function() {
             exports.save()
         }
     }
-    logger.log('La configuration a été chargée')
+    logger.log("La configuration a été chargée")
 }
 
 function validateKeySet(srcObj, destObj){
     if(srcObj == null){
         srcObj = {}
     }
-    const validationBlacklist = ['authenticationDatabase']
+    const validationBlacklist = ["authenticationDatabase"]
     const keys = Object.keys(srcObj)
     for(let i=0; i<keys.length; i++){
-        if(typeof destObj[keys[i]] === 'undefined'){
+        if(typeof destObj[keys[i]] === "undefined"){
             destObj[keys[i]] = srcObj[keys[i]]
-        } else if(typeof srcObj[keys[i]] === 'object' && srcObj[keys[i]] != null && !(srcObj[keys[i]] instanceof Array) && validationBlacklist.indexOf(keys[i]) === -1){
+        } else if(typeof srcObj[keys[i]] === "object" && srcObj[keys[i]] != null && !(srcObj[keys[i]] instanceof Array) && validationBlacklist.indexOf(keys[i]) === -1){
             destObj[keys[i]] = validateKeySet(srcObj[keys[i]], destObj[keys[i]])
         }
     }
@@ -82,7 +82,7 @@ exports.getSeenVersions = function(version) {
 exports.setSeenVersions = function(version, value) {
 	try {
 		config.hasSeen[version] = value
-		logger.log('La valeur \'hasSeen\' pour la version ' + version + ' a été définie sur ' + value)
+		logger.log("La valeur \"hasSeen\" pour la version " + version + " a été définie sur " + value)
 	} catch (err) {
 		logger.error(err)
 	}
