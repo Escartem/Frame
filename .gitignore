@@ -7,3 +7,4 @@
 /docs/_templates
 /issues
 /circleci
+app/updater.js
