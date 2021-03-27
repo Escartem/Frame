@@ -75,6 +75,7 @@ const createLoadingScreen = () => {
         show: false,
         webPreferences: {
             nodeIntegration: true,
+            contextIsolation: false,
             enableRemoteModule: true
         }
     }));
@@ -91,6 +92,7 @@ const createLoadingScreen = () => {
         show: false,
         webPreferences: {
             nodeIntegration: true,
+            contextIsolation: false,
             enableRemoteModule: true
         }
     });
@@ -151,6 +153,7 @@ function createWindow() {
         enableLargerThanScreen: true,
         webPreferences: {
             nodeIntegration: true,
+            contextIsolation: false,
             enableRemoteModule: true
         },
         show: false
@@ -167,6 +170,7 @@ function createWindow() {
         show: false,
         webPreferences: {
             nodeIntegration: true,
+            contextIsolation: false,
             enableRemoteModule: true
         }
     });
