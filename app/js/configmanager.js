@@ -14,7 +14,8 @@ logger.log("Emplacement : " + configPath)
 const LOGS = {
 	hasSeen: {
         "2.5.0": false,
-        "2.5.1": false
+        "2.5.1": false,
+        "2.5.2": false
 	}
 }
 
