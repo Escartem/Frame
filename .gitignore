@@ -8,3 +8,4 @@
 /issues
 /circleci
 app/updater.js
+package-lock.json
