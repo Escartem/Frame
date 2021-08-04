@@ -81,21 +81,6 @@ const createLoadingScreen = () => {
     }));
     // 550
     // 475
-    updateLogs = new BrowserWindow({
-        width: 600,
-        height: 475,
-        frame: false,
-        resizable: false,
-        alwaysOnTop: true,
-        transparent: true,
-        parent: loadingScreen,
-        show: false,
-        webPreferences: {
-            nodeIntegration: true,
-            contextIsolation: false,
-            enableRemoteModule: true
-        }
-    });
 
     //console.log(app.getLocale())
     //if (app.getLocale() == "fr") {
@@ -108,11 +93,6 @@ const createLoadingScreen = () => {
     var hide = false;
 
     loadingScreen.loadFile("app/html/loading.html");
-    if (app.getLocale() == "fr") {
-        updateLogs.loadFile("app/html/changelogs/fr_FR/252/changelog.html");
-    } else {
-        updateLogs.loadFile("app/html/changelogs/en_US/252/changelog.html");
-    }
 
     loadingScreen.on("closed", () => loadingScreen = null);
 
@@ -126,16 +106,8 @@ const createLoadingScreen = () => {
         }, 2000)
     });
 
-    ipcMain.on("update-logs", (evt, arg) => {
-        setTimeout(() => {
-            var hide = true
-            loadingScreen.hide()
-            updateLogs.show()
-        }, 2000)
-    });
-
     ipcMain.on("start-app", (evt, arg) => {
-        updateLogs.hide()
+        //updateLogs.hide()
         createWindow()
     });
 }
@@ -177,9 +149,9 @@ function createWindow() {
 
 
     if (app.getLocale() == "fr") {
-        updateLogsApp.loadFile("app/html/changelogs/fr_FR/252/app-changelog.html");
+        updateLogsApp.loadFile("app/html/changelogs/fr_FR.html");
     } else {
-        updateLogsApp.loadFile("app/html/changelogs/en_US/252/app-changelog.html");
+        updateLogsApp.loadFile("app/html/changelogs/en_US.html");
     }
 
     if (app.getLocale() == "fr") {
