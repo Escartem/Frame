@@ -27,7 +27,7 @@
   "devDependencies": {
     "electron": "^13.6.1",
     "electron-builder": "^22.11.7",
-    "electron-packager": "^15.3.0"
+    "electron-packager": "^15.4.0"
   },
   "repository": {
     "type": "git",
