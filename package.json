@@ -24,7 +24,7 @@
   "author": "Escartem",
   "license": "ISC",
   "devDependencies": {
-    "electron": "^13.6.1",
+    "electron": "^16.0.1",
     "electron-builder": "^22.11.7"
   },
   "repository": {
