@@ -1,0 +1,16 @@
+F:\PC\Docs\GitHub\Frame\app\Frame\Frame\bin\Release\net6.0-windows\Frame.exe
+F:\PC\Docs\GitHub\Frame\app\Frame\Frame\bin\Release\net6.0-windows\Frame.deps.json
+F:\PC\Docs\GitHub\Frame\app\Frame\Frame\bin\Release\net6.0-windows\Frame.runtimeconfig.json
+F:\PC\Docs\GitHub\Frame\app\Frame\Frame\bin\Release\net6.0-windows\Frame.dll
+F:\PC\Docs\GitHub\Frame\app\Frame\Frame\bin\Release\net6.0-windows\ref\Frame.dll
+F:\PC\Docs\GitHub\Frame\app\Frame\Frame\bin\Release\net6.0-windows\Frame.pdb
+F:\PC\Docs\GitHub\Frame\app\Frame\Frame\obj\Release\net6.0-windows\Frame.Form1.resources
+F:\PC\Docs\GitHub\Frame\app\Frame\Frame\obj\Release\net6.0-windows\Frame.vbproj.GenerateResource.cache
+F:\PC\Docs\GitHub\Frame\app\Frame\Frame\obj\Release\net6.0-windows\Frame.GeneratedMSBuildEditorConfig.editorconfig
+F:\PC\Docs\GitHub\Frame\app\Frame\Frame\obj\Release\net6.0-windows\Frame.AssemblyInfoInputs.cache
+F:\PC\Docs\GitHub\Frame\app\Frame\Frame\obj\Release\net6.0-windows\Frame.AssemblyInfo.vb
+F:\PC\Docs\GitHub\Frame\app\Frame\Frame\obj\Release\net6.0-windows\Frame.vbproj.CoreCompileInputs.cache
+F:\PC\Docs\GitHub\Frame\app\Frame\Frame\obj\Release\net6.0-windows\Frame.dll
+F:\PC\Docs\GitHub\Frame\app\Frame\Frame\obj\Release\net6.0-windows\ref\Frame.dll
+F:\PC\Docs\GitHub\Frame\app\Frame\Frame\obj\Release\net6.0-windows\Frame.pdb
+F:\PC\Docs\GitHub\Frame\app\Frame\Frame\obj\Release\net6.0-windows\Frame.genruntimeconfig.cache
