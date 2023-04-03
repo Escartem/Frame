@@ -134,9 +134,9 @@
                     <div class="main">
                         <div class="img">
                             <div class="overlay">
-                                <img src="https://escartem.github.io/electron/frame/1.1.1/close.png" id="closeApp" width="13" height="13" class="btn-close" alt="Fermer" title="Fermer" onclick="closeFunction()">
-                                <img src="https://escartem.github.io/electron/frame/1.1.1/MinMax.png" id="MinMax" width="13" height="13" class="btn-minmax" alt="Plein écran" title="Plein écran">
-                                <img src="https://escartem.github.io/electron/frame/1.1.1/minimize.png" id="minimizeApp" width="13" height="13" class="btn-min" alt="Réduire" title="Réduire">
+                                <img src="https://ena.escartem.eu.org/electron/frame/1.1.1/close.png" id="closeApp" width="13" height="13" class="btn-close" alt="Fermer" title="Fermer" onclick="closeFunction()">
+                                <img src="https://ena.escartem.eu.org/electron/frame/1.1.1/MinMax.png" id="MinMax" width="13" height="13" class="btn-minmax" alt="Plein écran" title="Plein écran">
+                                <img src="https://ena.escartem.eu.org/electron/frame/1.1.1/minimize.png" id="minimizeApp" width="13" height="13" class="btn-min" alt="Réduire" title="Réduire">
                             </div>
                             <!-- <div class="overlay-right">
                                 <img src="https://escartem.github.io/electron/frame/1.1.1/gray.png" id="update-logs" width="13" height="13" class="update-logs" alt="Notes de mise à jour" title="Notes de mises à jour">
@@ -149,7 +149,7 @@
                 var appVersion = require('electron').remote.app.getVersion();
                 //console.log(appVersion);
                 const frame = document.getElementById("mainFrame");
-                frame.src = "https://escartem.github.io/electron/frame/V3/indexV3?version=" + appVersion + "&lang=fr";
+                frame.src = "https://ena.escartem.eu.org/electron/frame/V3/indexV3?version=" + appVersion + "&lang=fr";
                 </script>
                 <script>
                 const { ipcRenderer } = require('electron');
