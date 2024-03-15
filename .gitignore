@@ -9,3 +9,5 @@
 /circleci
 app/updater.js
 package-lock.json
+/app/Frame/.vs
+/app/Frame/Frame/bin

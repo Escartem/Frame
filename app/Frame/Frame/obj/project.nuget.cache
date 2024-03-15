@@ -1,21 +1,16 @@
 {
   "version": 2,
-  "dgSpecHash": "IYQXSkiwUl0eZkb79YoRaSpsb/qMQKefJcvRdTZXptZTW6vAugoGu6PhkTrI3z/2DBw8JAV7OKJ7uAoq47rQdw==",
+  "dgSpecHash": "EcD+xupKpRSthzQJtACg1+qwN4H9Twxx9OhUICM/69hzu7VLNj25Ulr6R66iRmbRbsjlNGsd7pNr/LiOEgmoew==",
   "success": true,
   "projectFilePath": "F:\\PC\\Docs\\GitHub\\Frame\\app\\Frame\\Frame\\Frame.vbproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Escartem\\.nuget\\packages\\guna.ui2.winforms\\2.0.2.5\\guna.ui2.winforms.2.0.2.5.nupkg.sha512"
+    "C:\\Users\\Escartem\\.nuget\\packages\\microsoft.netcore.app.ref\\5.0.0\\microsoft.netcore.app.ref.5.0.0.nupkg.sha512",
+    "C:\\Users\\Escartem\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\5.0.0\\microsoft.windowsdesktop.app.ref.5.0.0.nupkg.sha512",
+    "C:\\Users\\Escartem\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\5.0.0\\microsoft.aspnetcore.app.ref.5.0.0.nupkg.sha512",
+    "C:\\Users\\Escartem\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x64\\5.0.15\\microsoft.netcore.app.runtime.win-x64.5.0.15.nupkg.sha512",
+    "C:\\Users\\Escartem\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x64\\5.0.15\\microsoft.windowsdesktop.app.runtime.win-x64.5.0.15.nupkg.sha512",
+    "C:\\Users\\Escartem\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x64\\5.0.15\\microsoft.aspnetcore.app.runtime.win-x64.5.0.15.nupkg.sha512",
+    "C:\\Users\\Escartem\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.15\\microsoft.netcore.app.host.win-x64.5.0.15.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Le package 'Guna.UI2.WinForms 2.0.2.5' a été restauré en utilisant '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' au lieu du framework cible du projet 'net6.0-windows7.0'. Ce package n'est peut-être pas totalement compatible avec votre projet.",
-      "libraryId": "Guna.UI2.WinForms",
-      "targetGraphs": [
-        "net6.0-windows7.0"
-      ]
-    }
-  ]
+  "logs": []
 }

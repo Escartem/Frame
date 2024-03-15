@@ -2,11 +2,19 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net6.0-windows</TargetFramework>
-    <StartupObject>Sub Main</StartupObject>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <StartupObject>Frame.App</StartupObject>
     <UseWindowsForms>true</UseWindowsForms>
     <MyType>WindowsForms</MyType>
     <AppDesignerFolder>Project</AppDesignerFolder>
+    <ApplicationManifest>Project\app.manifest</ApplicationManifest>
+    <Version>3.0.0</Version>
+    <Authors>Escartem</Authors>
+    <Copyright>Escartem</Copyright>
+    <PackageProjectUrl>https://github.com/Escartem/Frame</PackageProjectUrl>
+    <SignAssembly>false</SignAssembly>
+    <AssemblyOriginatorKeyFile>Frame_TemporaryKey.pfx</AssemblyOriginatorKeyFile>
+    <ApplicationIcon>assets\icon.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
@@ -41,10 +49,6 @@
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
     </None>
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="Guna.UI2.WinForms" Version="2.0.2.5" />
   </ItemGroup>
 
 </Project>

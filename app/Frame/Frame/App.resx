@@ -61,8 +61,29 @@
   <data name="bg.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIAAQMAAADOtka5AAAABGdBTUEAALGPC/xhBQAAAANQTFRF////
-        p8QbyAAAAAlwSFlzAAAOwAAADsABataJCQAAADZJREFUeNrtwQEBAAAAgiD/r25IQAAAAAAAAAAAAAAA
+        p8QbyAAAAAlwSFlzAAAOvQAADr0BR/uQrQAAADZJREFUeNrtwQEBAAAAgiD/r25IQAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAA12qCAAABWZSFFAAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="CloseButton.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAF4AAABeCAYAAACq0qNuAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vAAADrwBlbxySQAAA2ZJREFUeF7tne1O2zAUhnsNuZ7exaSxsZXRFoqENo2rGF/7uY1dbKrsHMdOUttd
+        0jjOcZP3SA9IKLGPH8Ax+COLVCO/eJcRy0AyXRzif7F/fSoM+c26IHFh3K6L/c/nCl0Nwg6IFwgSlbGo
+        ik8XfpmnwGXcbmrm2vVww4nDfvh+VyiuLl1xQ8N1mPrsPKb2Tdm//S4M+W7rykgFyq2Zq07/fKOS/vxY
+        5J8/+BudApwb5XiW4qkBbley+VIoLt/7G5wSnKPJ125Hyl2RTtBt0DRY6mamF5ycleyUgHgh0hFPyRz2
+        6ZsrX8LT4HrFn+u2Svb5+cM3N8G58PBVbuQD8UIB8SMFVZhxhRWrEf7MT5XVx9oDE7PPp8L5oeImAZh4
+        ox4u3KoM1EC8EMOJp8IOx+lrNZYFPko3tauQPl8X4FYCutD/N4BvtgoD3YF4ISBeiNPF7//+KZh8qyYE
+        QB/I3f7tl0JrbQ+IH4C+4vOXp/OYrksVdvf8o7t4uinL77bl/yJ8BYLu8AT6ruN6HroID9ThaX/Q8kXW
+        TSAciBcC4oXoIP7+zncjCIGcar3HA+Ij0CaeLspGWbU7N0qn7pDSLNzXa8hBDHiTxMujQmuH+FGAeCFs
+        8fTFegvMENtfgB92e3Ndwv09fcC4fXyWEC8DxAsB8UJAvBAQLwTECwHxQkC8EBAvBMQLAfFCQLwQEC8E
+        xAsB8UIo8Zk6eI3BREg87IkQjurkO56F8t0EwvHOuUJ8fCBeCJ94E3QBFjTF4NiCpmZgCV8EsHZSiE7i
+        Ma6PAdbHCwHxQkC8EJ3EZ+rw5ZTPAT4X1HZLdZB1tyNUeFMsb47FBuMATt1gzGG2gmNLfQC9ttRDfDh9
+        xJugAvCg7U/7A/VY8M1WYaA7EC8ExAsRJB7HH3ZlyOMP7dAFupUCpv9PeFtw4VZloAbihYgqPlNnxhvm
+        PE045jHmdsz64P7veGOCDBAvhKh4e5w/5dcRxRynh4ZOyE16GsQbtYQGJ2clOyUgXoikxeO1oqlENZvF
+        c7jJv0i3nCPtNWuUWpiGKPnlAcdpQrk1c9XpTyOogW5XxGs1mTH+/cB1mPrsPM6tKxkquOFqfb5hiG1B
+        XEazzLnKbQuzQUJtkuA9WT6Zp0BlNMvU1SDsaEqCeKEgce7z4HQS7VoWi3/Ih/tn04nGDAAAAABJRU5E
+        rkJggg==
 </value>
   </data>
 </root>

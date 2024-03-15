@@ -1,0 +1,8 @@
+F:\PC\Docs\GitHub\Frame\app\Frame\Frame\obj\Release\netcoreapp3.0\Frame.vbproj.AssemblyReference.cache
+F:\PC\Docs\GitHub\Frame\app\Frame\Frame\obj\Release\netcoreapp3.0\Frame.App.resources
+F:\PC\Docs\GitHub\Frame\app\Frame\Frame\obj\Release\netcoreapp3.0\Frame.Resources.resources
+F:\PC\Docs\GitHub\Frame\app\Frame\Frame\obj\Release\netcoreapp3.0\Frame.vbproj.GenerateResource.cache
+F:\PC\Docs\GitHub\Frame\app\Frame\Frame\obj\Release\netcoreapp3.0\Frame.GeneratedMSBuildEditorConfig.editorconfig
+F:\PC\Docs\GitHub\Frame\app\Frame\Frame\obj\Release\netcoreapp3.0\Frame.AssemblyInfoInputs.cache
+F:\PC\Docs\GitHub\Frame\app\Frame\Frame\obj\Release\netcoreapp3.0\Frame.AssemblyInfo.vb
+F:\PC\Docs\GitHub\Frame\app\Frame\Frame\obj\Release\netcoreapp3.0\Frame.vbproj.CoreCompileInputs.cache

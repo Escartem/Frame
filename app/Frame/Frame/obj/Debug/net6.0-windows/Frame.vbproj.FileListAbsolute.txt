@@ -4,7 +4,6 @@ F:\PC\Docs\GitHub\Frame\app\Frame\Frame\bin\Debug\net6.0-windows\Frame.runtimeco
 F:\PC\Docs\GitHub\Frame\app\Frame\Frame\bin\Debug\net6.0-windows\Frame.dll
 F:\PC\Docs\GitHub\Frame\app\Frame\Frame\bin\Debug\net6.0-windows\ref\Frame.dll
 F:\PC\Docs\GitHub\Frame\app\Frame\Frame\bin\Debug\net6.0-windows\Frame.pdb
-F:\PC\Docs\GitHub\Frame\app\Frame\Frame\bin\Debug\net6.0-windows\Guna.UI2.dll
 F:\PC\Docs\GitHub\Frame\app\Frame\Frame\obj\Debug\net6.0-windows\Frame.App.resources
 F:\PC\Docs\GitHub\Frame\app\Frame\Frame\obj\Debug\net6.0-windows\Frame.Resources.resources
 F:\PC\Docs\GitHub\Frame\app\Frame\Frame\obj\Debug\net6.0-windows\Frame.vbproj.GenerateResource.cache
@@ -12,8 +11,8 @@ F:\PC\Docs\GitHub\Frame\app\Frame\Frame\obj\Debug\net6.0-windows\Frame.Generated
 F:\PC\Docs\GitHub\Frame\app\Frame\Frame\obj\Debug\net6.0-windows\Frame.AssemblyInfoInputs.cache
 F:\PC\Docs\GitHub\Frame\app\Frame\Frame\obj\Debug\net6.0-windows\Frame.AssemblyInfo.vb
 F:\PC\Docs\GitHub\Frame\app\Frame\Frame\obj\Debug\net6.0-windows\Frame.vbproj.CoreCompileInputs.cache
-F:\PC\Docs\GitHub\Frame\app\Frame\Frame\obj\Debug\net6.0-windows\Frame.vbproj.CopyComplete
 F:\PC\Docs\GitHub\Frame\app\Frame\Frame\obj\Debug\net6.0-windows\Frame.dll
 F:\PC\Docs\GitHub\Frame\app\Frame\Frame\obj\Debug\net6.0-windows\ref\Frame.dll
 F:\PC\Docs\GitHub\Frame\app\Frame\Frame\obj\Debug\net6.0-windows\Frame.pdb
 F:\PC\Docs\GitHub\Frame\app\Frame\Frame\obj\Debug\net6.0-windows\Frame.genruntimeconfig.cache
+F:\PC\Docs\GitHub\Frame\app\Frame\Frame\obj\Debug\net6.0-windows\Frame.vbproj.AssemblyReference.cache
