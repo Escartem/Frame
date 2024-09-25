@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>NeutralinoJs sample app</title>
+		<script src="./js/vex.combined.min.js"></script>
+		<script>vex.defaultOptions.className = 'vex-theme-default'</script>
+		<link rel="stylesheet" href="./css/vex.css" />
+		<link rel="stylesheet" href="./css/vex-theme-default.css" />
+		<link rel="stylesheet" href="./css/styles.css">
+	</head>
+	<body>
+		<div id="main">
+			<div id="buttons">
+				<img id="closeBtn" draggable="false" class="button" src="/icons/close.png" onclick="closeApp()" />
+				<img id="maxBtn" draggable="false" class="button" src="/icons/fullscreen.png" onclick="toggleMaximize()" />
+				<img id="minBtn" draggable="false" class="button" src="/icons/minimize.png" onclick="Neutralino.window.minimize()" />
+			</div>
+
+			<iframe id="iframe"></iframe>
+		</div>
+
+		<script src="/js/neutralino.js"></script>
+		<script src="/js/main.js"></script>
+	</body>
+</html>
