@@ -1,13 +1,18 @@
-# Developer tools' files
-.lite_workspace.lua
-
-# Neutralinojs binaries and builds
-/bin
+/node_modules
 /dist
-
-# Neutralinojs client (minified)
-neutralino.js
+<<<<<<< Updated upstream
+/app/idea.sublime
+/yarn.lock
+/docs/_build
+/docs/_static
+/docs/_templates
+/issues
+/circleci
+app/updater.js
+package-lock.json
+=======
 
 # Neutralinojs related files
 .storage
 *.log
+>>>>>>> Stashed changes
