@@ -131,14 +131,14 @@ Neutralino.app.getConfig().then(async (config) => {
 	document.getElementById("maxBtn").title = textData[lang]["max"]
 	document.getElementById("minBtn").title = textData[lang]["min"]
 	
-	document.getElementById("iframe").src = `https://ena.escartem.eu.org/projects/frame?version=${appVersion}&lang=${lang}`;
+	document.getElementById("iframe").src = `https://ena.escartem.moe/projects/frame?version=${appVersion}&lang=${lang}`;
 })
 
 // update app
 // doesn't work well yet, to fix later
 async function checkUpdates() {
 	try {
-		let url = "https://ena.escartem.eu.org/projects/frame/updates/manifest.json";
+		let url = "https://ena.escartem.moe/projects/frame/updates/manifest.json";
 		let manifest = await Neutralino.updater.checkForUpdates(url);
 
 		if (manifest.version != NL_APPVERSION) {
